@@ -6,8 +6,8 @@ import { v4 as uuidv4 } from 'uuid';
 export default class TodoApp extends Component {
     state = {
         tasks: [
-            { id: 1, name: "task1", done: false },
-            { id: 2, name: "task2", done: false }
+            { id: 1, name: "task2", done: false },
+            { id: 2, name: "task3", done: false }
         ]
     }
     addTodo = (newİnput) => {
