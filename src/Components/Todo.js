@@ -19,7 +19,7 @@ export default class Todo extends Component {
 
     render() {
         return (
-            <div>
+            <div>   
                <form onSubmit={this.submitHandler}>
                 <input onChange={this.changeHandler} type="text" value={this.state.input}/>
                 <button type="submit">add</button>     

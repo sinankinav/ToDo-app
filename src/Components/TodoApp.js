@@ -16,7 +16,7 @@ export default class TodoApp extends Component {
         } else if (this.state.tasks.find(task => task.name === newİnput)) {
             alert("bunu daha önce girmiştiniz")
         } else {
-            const newTask = {
+            const newTask = { 
                 id: uuidv4(),
                 name: newİnput,
                 done: false
