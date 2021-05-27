@@ -11,7 +11,7 @@ export default class TodoApp extends Component {
         ]
     }
     addTodo = (newİnput) => {
-        if (newİnput === "") {
+        if (newİnput === "") {  
             alert("task girmeyi unuttunuz!")
         } else if (this.state.tasks.find(task => task.name === newİnput)) {
             alert("bunu daha önce girmiştiniz")
@@ -25,11 +25,30 @@ export default class TodoApp extends Component {
             this.setState({ tasks: [...this.state.tasks, newTask] })
         }
     }
+    removeTodo= (name)=>{
+    const filtered = this.state.tasks.filter(task=>task.name!==name)
+    this.setState({
+        tasks:filtered
+    })
+
+
+    }
+    cizTodo=(name)=>{
+        const yeni = this.state.tasks.map(task=>{
+            if(task.name=== name){
+                task.done =!task.done
+            }
+            return task
+        })
+       this.setState({
+        task:yeni,
+       }) 
+    }
     render() {
         return (
             <div>
                 <Todo addTodo={this.addTodo}/>
-                <TodoList tasks={this.state.tasks} />
+                <TodoList cizTodo={this.cizTodo} removeTodo={this.removeTodo} tasks={this.state.tasks} />
             </div>
         )
     }
